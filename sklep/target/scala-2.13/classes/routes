@@ -1,0 +1,74 @@
+# Routes
+# This file defines all application routes (Higher priority routes first)
+# https://www.playframework.com/documentation/latest/ScalaRouting
+# ~~~~
+
+
+#UserController
+POST /user/ controllers.UserController.createUser()
+GET /user/:id controllers.UserController.getUser(id:Int)
+PUT /user/:id controllers.UserController.updateUser(id:Int)
+DELETE /user/:id controllers.UserController.deleteUser(id:Int)
+
+#CourseController
+POST /course/ controllers.CourseController.createCourse()
+GET /course/:id controllers.CourseController.getCourse(id:Int)
+PUT /course/:id controllers.CourseController.updateCourse(id:Int)
+DELETE /course/:id controllers.CourseController.deleteCourse(id:Int)
+
+#CartController
+POST /cart/ controllers.CartController.createCart()
+GET /cart/:id controllers.CartController.getCart(id:Int)
+PUT /cart/:id controllers.CartController.updateCart(id:Int)
+DELETE /cart/:id controllers.CartController.deleteCart(id:Int)
+
+#CategoryController
+POST /category/ controllers.CategoryController.createCategory()
+GET /category/:id controllers.CategoryController.getCategory(id:Int)
+PUT /category/:id controllers.CategoryController.updateCategory(id:Int)
+DELETE /category/:id controllers.CategoryController.deleteCategory(id:Int)
+
+#ClassroomController
+POST /classroom/ controllers.ClassroomController.createClassroom()
+GET /classroom/:id controllers.ClassroomController.getClassroom(id:Int)
+PUT /classroom/:id controllers.ClassroomController.updateClassroom(id:Int)
+DELETE /classroom/:id controllers.ClassroomController.deleteClassroom(id:Int)
+
+#CommentController
+POST /comment/ controllers.CommentController.createComment()
+GET /comment/:id controllers.CommentController.getComment(id:Int)
+PUT /comment/:id controllers.CommentController.updateComment(id:Int)
+DELETE /comment/:id controllers.CommentController.deleteComment(id:Int)
+
+#DiscountController
+POST /discount/ controllers.DiscountController.createDiscount()
+GET /discount/:id controllers.DiscountController.getDiscount(id:Int)
+PUT /discount/:id controllers.DiscountController.updateDiscount(id:Int)
+DELETE /discount/:id controllers.DiscountController.deleteDiscount(id:Int)
+
+#OrderController
+POST /order/ controllers.OrderController.createOrder()
+GET /order/:id controllers.OrderController.getOrder(id:Int)
+PUT /order/:id controllers.OrderController.updateOrder(id:Int)
+DELETE /order/:id controllers.OrderController.deleteOrder(id:Int)
+
+#ProfileController
+POST /profile/ controllers.ProfileController.createProfile()
+GET /profile/:id controllers.ProfileController.getProfile(id:Int)
+PUT /profile/:id controllers.ProfileController.updateProfile(id:Int)
+DELETE /profile/:id controllers.ProfileController.deleteProfile(id:Int)
+
+#ReviewController
+POST /review/ controllers.ReviewController.createReview()
+GET /review/:id controllers.ReviewController.getReview(id:Int)
+PUT /review/:id controllers.ReviewController.updateReview(id:Int)
+DELETE /review/:id controllers.ReviewController.deleteReview(id:Int)
+
+
+
+
+# An example controller showing a sample home page
+GET     /                           controllers.BasicController.index()
+
+# Map static resources from the /public folder to the /assets URL path
+GET     /assets/*file               controllers.Assets.versioned(path="/public", file: Asset)
