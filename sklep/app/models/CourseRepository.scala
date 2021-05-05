@@ -13,12 +13,11 @@ class CourseRepository @Inject() (dbConfigProvider: DatabaseConfigProvider, cate
   import dbConfig._
   import profile.api._
 
-  private class CourseTable(tag: Tag) extends Table[Course](tag, "course") {
+   class CourseTable(tag: Tag) extends Table[Course](tag, "course") {
     def id = column[Long]("id", O.PrimaryKey, O.AutoInc)
     def name = column[String]("name")
     def description = column[String]("description")
     def category = column[Long]("category")
-    def category_fk = foreignKey("cat_fk",category, cat)(_.id)
     def * = (id , name , description ,category) <> ((Course.apply _).tupled, Course.unapply)
 
   }
@@ -27,7 +26,7 @@ class CourseRepository @Inject() (dbConfigProvider: DatabaseConfigProvider, cate
 
 
   private val courses = TableQuery[CourseTable]
-  private val cat = TableQuery[CategoryTable]
+  private val categories = TableQuery[CategoryTable]
 
   def add(name: String ,description: String, category: Int): Future[Course] = db.run {
     (courses.map(c => (c.name, c.description, c.category))
